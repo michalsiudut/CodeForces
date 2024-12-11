@@ -4,6 +4,7 @@ using namespace std;
 
 int main()
 {
+    // sprawdzam czy dziala
     string word;
     cin >> word;
     int sumBig = 0, sumSmall = 0;
