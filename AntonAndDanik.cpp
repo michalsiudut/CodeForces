@@ -6,6 +6,7 @@ int main()
 {
     int a;
     cin >> a;
+    // sprawdzam czy dziala
     string name;
     cin >> name;
     int Anton = 0, Danik = 0;
