@@ -63,11 +63,11 @@ int main()
             {
                 other.clear();
             }
-            cout << endl;
+            cout << "\n";
         }
         else
         {
-            cout << endl;
+            cout << "\n";
         }
     }
     return 0;
