@@ -8,7 +8,6 @@ int main()
     int k, r;
     cin >> k >> r;
     int sum = 1;
-    int i = 0;
     int tmp = k;
     while (k % 10 != r && k % 10 != 0)
     {
