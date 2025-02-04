@@ -5,61 +5,47 @@
 int main()
 {
     int n;
-    int m = 0;
     std::cin >> n;
-    std::cin.ignore();
-    std::set<int> player;
-    std::string e, e1;
-    getline(std::cin, e);
-    getline(std::cin, e1);
-    std::string c = e + ' ' + e1;
+    int tmp2 = 0;
     int sum = 0;
-    for (int i = 0; i < c.length(); i += 2)
+    while (n != 0)
     {
-        // std::cout << (int)c[i] - 48 << "  " << (int)c[i + 1] - 48 << "\n";
-        int tmp = (int)c[i] - 48;
-        if (tmp > 0 && (int)c[i + 1] - 48 >= 0)
-        {
-            if (tmp > 0 && (int)c[i + 2] - 48 >= 0)
-            {
+        sum += n;
+        n--;
+    }
 
-                std::string a = std::string(1, c[i]) + std::string(1, c[i + 1]) + std::string(1, c[i + 2]);
-                tmp = stoi(a);
-                i++;
-            }
-            else
-            {
-                std::string a = std::string(1, c[i]) + std::string(1, c[i + 1]);
-                tmp = stoi(a);
-                i++;
-            }
-        }
-        player.insert(tmp);
-    }
-    /*
-        for (auto i = player.begin(); i != player.end(); i++)
+    std::set<int> player1, player2;
+    int tmp;
+    int m = 0;
+    for (int i = 0; i < 2; i++)
+    {
+        std::cin >> tmp;
+        for (int i = 0; i < tmp; i++)
         {
-            std::cout << *i << " "
+            std::cin >> tmp2;
+            player1.insert(tmp2);
         }
-        std::cout << "\n";
-    */
-    for (auto i = player.begin(); i != player.end(); i++)
-    {
-        sum += *i;
     }
-    // co jest nie tak?
-    for (int i = 1; i < n + 1; i++)
+    for (int i = 0; i < player1.size(); i++)
     {
-        m += i;
+        auto it = std::next(player1.begin(), i);
+        m += *it;
     }
-    // std::cout << m << " " << sum << "\n";
+    for (int i = 0; i < player2.size(); i++)
+    {
+        auto it = std::next(player2.begin(), i);
+        m += *it;
+    }
+
     if (sum == m)
     {
         std::cout << "I become the guy.\n";
+        // std::cout << "m:" << m << "sum" << sum << "\n";
     }
     else
     {
         std::cout << "Oh, my keyboard!\n";
+        // std::cout << "m:" << m << "sum" << sum << "\n";
     }
 
     return 0;
